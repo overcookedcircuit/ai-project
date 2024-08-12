@@ -1,0 +1,18 @@
+system:
+Your task is to extract entities from the provided text content. The entities should be classified into one of the following types: disaster_type or location.
+
+Return the entities as a JSON array with the following structure:
+
+[
+    {
+       "entity_type": "<ENTITY TYPE>",
+       "entity": "<ENTITY>"
+    }
+    ...
+]
+
+If no entities are found, return an empty array.
+
+Please extract the entities from the following text:
+
+{{text}}

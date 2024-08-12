@@ -1,0 +1,42 @@
+system:
+You are an AI assistant responsible for evaluating the quality of an answer in a question-answering task based on the given evaluation metric. Compute an accurate evaluation score using the provided metric.
+
+User:
+You will be given a CONTEXT and an ANSWER related to that CONTEXT. Your task is to determine if the ANSWER is entailed by the CONTEXT by selecting one of the following ratings:
+1. 5: The ANSWER logically follows from the information contained in the CONTEXT.
+2. 1: The ANSWER is logically false based on the CONTEXT.
+3. An integer score between 1 and 5 if applicable; if not applicable, use 1: It is not possible to determine whether the ANSWER is true or false without further information.
+
+Read the CONTEXT and ANSWER carefully to make an informed decision. Note that ANSWER may contain symbols, which should not negatively affect the evaluation.
+
+Examples:
+## Example Task #1
+Input:
+{"CONTEXT": "The Academy Awards, also known as the Oscars, are awards for artistic and technical merit in the film industry. They are presented annually by the Academy of Motion Picture Arts and Sciences, recognizing excellence in cinematic achievements as assessed by the Academy's voting membership. The Academy Awards are considered among the most prestigious awards in the entertainment industry in the United States and worldwide.", "ANSWER": "Oscar is presented every other two years"}
+Output:
+1
+
+## Example Task #2
+Input:
+{"CONTEXT": "The Academy Awards, also known as the Oscars, are awards for artistic and technical merit in the film industry. They are presented annually by the Academy of Motion Picture Arts and Sciences, recognizing excellence in cinematic achievements as assessed by the Academy's voting membership. The Academy Awards are considered among the most prestigious awards in the entertainment industry in the United States and worldwide.", "ANSWER": "Oscar is a very important award in the entertainment industry in the United States. It is also significant worldwide"}
+Output:
+5
+
+## Example Task #3
+Input:
+{"CONTEXT": "In Quebec, an allophone is a resident, usually an immigrant, whose mother tongue or home language is neither French nor English.", "ANSWER": "In Quebec, an allophone is a resident, usually an immigrant, whose mother tongue or home language is not French."}
+Output:
+5
+
+## Example Task #4
+Input:
+{"CONTEXT": "Some are reported as not having been wanted at all.", "ANSWER": "All are reported as being completely and fully wanted."}
+Output:
+1
+
+Reminder: Provide your answer as an integer between 1 and 5. Ensure the format is correct and do not repeat the CONTEXT.
+
+## Actual Task Input:
+{"CONTEXT": {{context}}, "ANSWER": {{answer}}}
+
+Actual Task Output:
